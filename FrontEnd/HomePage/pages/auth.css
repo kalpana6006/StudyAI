@@ -1,0 +1,1000 @@
+/* =========================================================
+   STUDYAI AUTHENTICATION
+   REGISTER + LOGIN
+   ========================================================= */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --primary: #5b5bf7;
+    --primary-dark: #4545d8;
+    --primary-light: #eeeeff;
+
+    --text-dark: #17172b;
+    --text: #44445a;
+    --text-light: #77778a;
+
+    --border: #e5e5ef;
+    --background: #f7f8fc;
+    --white: #ffffff;
+
+    --danger: #e5484d;
+}
+
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: var(--background);
+
+    color: var(--text-dark);
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   MAIN AUTH PAGE
+   ========================================================= */
+
+.auth-page {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 42% 58%;
+}
+
+
+/* =========================================================
+   LEFT INFORMATION SECTION
+   ========================================================= */
+
+.auth-info {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f0f0ff 0%,
+            #e9e9ff 50%,
+            #f7f7ff 100%
+        );
+
+    padding: 50px 8%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+.auth-info::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    background: rgba(91, 91, 247, 0.08);
+
+    top: -160px;
+    left: -160px;
+}
+
+
+.auth-info::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: rgba(91, 91, 247, 0.06);
+
+    bottom: -130px;
+    right: -100px;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 26px;
+
+    font-weight: 800;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.brand span span {
+    color: var(--primary);
+}
+
+
+.brand-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 8px 20px rgba(91, 91, 247, 0.25);
+}
+
+
+/* =========================================================
+   INFO CONTENT
+   ========================================================= */
+
+.info-content {
+    max-width: 540px;
+
+    margin: auto 0;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.info-content h1 {
+    font-size: clamp(38px, 4vw, 58px);
+
+    line-height: 1.08;
+
+    letter-spacing: -1.8px;
+
+    margin-bottom: 22px;
+}
+
+
+.info-content h1 span {
+    color: var(--primary);
+}
+
+
+.info-content > p {
+    color: var(--text);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    max-width: 500px;
+
+    margin-bottom: 42px;
+}
+
+
+/* =========================================================
+   BENEFITS
+   ========================================================= */
+
+.benefits {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+
+.benefit {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+.benefit-icon {
+    min-width: 48px;
+    height: 48px;
+
+    border-radius: 13px;
+
+    background: rgba(91, 91, 247, 0.1);
+
+    color: var(--primary);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+
+.benefit h3 {
+    font-size: 15px;
+
+    margin-bottom: 4px;
+}
+
+
+.benefit p {
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   RIGHT FORM SECTION
+   ========================================================= */
+
+.auth-form-section {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 45px 6%;
+}
+
+
+.auth-card {
+    width: 100%;
+
+    max-width: 620px;
+}
+
+
+/* =========================================================
+   FORM HEADER
+   ========================================================= */
+
+.form-header {
+    margin-bottom: 30px;
+}
+
+
+.form-header h2 {
+    font-size: 30px;
+
+    letter-spacing: -0.6px;
+
+    margin-bottom: 8px;
+}
+
+
+.form-header p {
+    color: var(--text-light);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.progress-container {
+    position: relative;
+
+    margin-bottom: 35px;
+}
+
+
+.progress-line {
+    position: absolute;
+
+    top: 17px;
+
+    left: 10%;
+
+    width: 80%;
+
+    height: 3px;
+
+    background: var(--border);
+
+    z-index: 0;
+}
+
+
+.progress-fill {
+    height: 100%;
+
+    width: 0%;
+
+    background: var(--primary);
+
+    transition: width 0.3s ease;
+}
+
+
+.progress-steps {
+    display: flex;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.progress-step {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.progress-step span {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    background: var(--white);
+
+    border: 2px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: var(--text-light);
+
+    transition: 0.3s;
+}
+
+
+.progress-step small {
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.progress-step.active span {
+    background: var(--primary);
+
+    border-color: var(--primary);
+
+    color: white;
+}
+
+
+.progress-step.active small {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   FORM STEPS
+   ========================================================= */
+
+.form-step {
+    display: none;
+}
+
+
+.form-step.active {
+    display: block;
+
+    animation: fadeIn 0.3s ease;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+.step-heading {
+    margin-bottom: 25px;
+}
+
+
+.step-heading h3 {
+    font-size: 20px;
+
+    margin-bottom: 5px;
+}
+
+
+.step-heading p {
+    color: var(--text-light);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+   ========================================================= */
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+
+.form-group label,
+.conditional-section > label {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 650;
+
+    color: var(--text-dark);
+
+    margin-bottom: 8px;
+}
+
+
+.form-group label span {
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    margin-left: 4px;
+}
+
+
+/* =========================================================
+   INPUT BOX
+   ========================================================= */
+
+.input-box {
+    width: 100%;
+
+    height: 49px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--white);
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 14px;
+
+    transition: 0.2s;
+}
+
+
+.input-box:focus-within {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(91, 91, 247, 0.09);
+}
+
+
+.input-box > i {
+    color: #9898aa;
+
+    font-size: 14px;
+
+    width: 25px;
+}
+
+
+.input-box input,
+.input-box select {
+    border: none;
+
+    outline: none;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: transparent;
+
+    color: var(--text-dark);
+
+    font-family: inherit;
+
+    font-size: 13px;
+}
+
+
+.input-box input::placeholder {
+    color: #aaaaba;
+}
+
+
+.input-box select {
+    cursor: pointer;
+
+    appearance: none;
+}
+
+
+.select-box {
+    position: relative;
+}
+
+
+.select-box::after {
+    content: "\f078";
+
+    font-family:
+        "Font Awesome 6 Free";
+
+    font-weight: 900;
+
+    position: absolute;
+
+    right: 15px;
+
+    color: #9898aa;
+
+    font-size: 10px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FORM ROW
+   ========================================================= */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   PASSWORD
+   ========================================================= */
+
+.password-toggle {
+    border: none;
+
+    background: none;
+
+    cursor: pointer;
+
+    color: #9292a5;
+
+    padding: 5px;
+}
+
+
+.password-toggle:hover {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.input-error {
+    border-color: var(--danger) !important;
+
+    box-shadow:
+        0 0 0 3px rgba(229, 72, 77, 0.08);
+}
+
+
+/* =========================================================
+   FIELD HINT
+   ========================================================= */
+
+.field-hint {
+    display: block;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    margin-top: 6px;
+}
+
+
+/* =========================================================
+   TARGET OPTIONS
+   ========================================================= */
+
+.target-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+
+.target-option {
+    cursor: pointer;
+}
+
+
+.target-option input {
+    display: none;
+}
+
+
+.target-option span {
+    min-height: 54px;
+
+    padding: 10px 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--white);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: var(--text);
+
+    transition: 0.2s;
+}
+
+
+.target-option span i {
+    color: var(--primary);
+
+    font-size: 14px;
+}
+
+
+.target-option:hover span {
+    border-color: #bdbdf8;
+
+    background: #fafaff;
+}
+
+
+.target-option.selected span {
+    border-color: var(--primary);
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   CONDITIONAL EXAM SECTION
+   ========================================================= */
+
+.conditional-section {
+    display: none;
+
+    background: #fafaff;
+
+    border: 1px solid #e4e4ff;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+    animation: fadeIn 0.25s ease;
+}
+
+
+.conditional-section.show {
+    display: block;
+}
+
+
+/* =========================================================
+   TERMS
+   ========================================================= */
+
+.terms {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    margin: 20px 0;
+}
+
+
+.terms input {
+    margin-top: 2px;
+
+    accent-color: var(--primary);
+
+    cursor: pointer;
+}
+
+
+.terms a {
+    color: var(--primary);
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.next-btn,
+.create-btn {
+    border: none;
+
+    min-height: 49px;
+
+    padding: 0 22px;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    transition: 0.2s;
+
+    flex: 1;
+}
+
+
+.next-btn:hover,
+.create-btn:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 18px rgba(91, 91, 247, 0.2);
+}
+
+
+.back-btn {
+    min-height: 49px;
+
+    padding: 0 20px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    transition: 0.2s;
+}
+
+
+.back-btn:hover {
+    border-color: #cfcfe0;
+
+    background: #fafafa;
+}
+
+
+.button-row {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   LOGIN LINK
+   ========================================================= */
+
+.login-link {
+    text-align: center;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+
+    margin-top: 25px;
+}
+
+
+.login-link a {
+    color: var(--primary);
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    margin-left: 4px;
+}
+
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .auth-page {
+        grid-template-columns: 1fr;
+    }
+
+
+    .auth-info {
+        display: none;
+    }
+
+
+    .auth-form-section {
+        padding: 40px 25px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .auth-form-section {
+        padding: 30px 18px;
+    }
+
+
+    .form-header h2 {
+        font-size: 25px;
+    }
+
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    .target-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .button-row {
+        flex-direction: column-reverse;
+    }
+
+
+    .back-btn,
+    .next-btn,
+    .create-btn {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyAI - Learn Smarter</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="#" class="logo">
+            <span class="logo-icon">🎓</span>
+            <span>Study<span>AI</span></span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#pricing">Pricing</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <a href="pages/login.html" class="login-btn">Login</a>
+
+            <a href="pages/register.html" class="primary-btn">Get Started</a>
+        </div>
+
+        <button class="menu-btn" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-container">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                ✨ AI-Powered Learning Platform
+            </div>
+
+            <h1>
+                Study Smarter,
+                <span>Not Harder</span>
+            </h1>
+
+            <p>
+                Upload your notes, get AI-powered summaries,
+                generate quizzes, create flashcards and track
+                your progress — all in one place.
+            </p>
+
+            <p class="sub-text">
+                Your personal AI study companion.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn large" onclick="getStarted()">
+                    Get Started Free →
+                </button>
+
+                <button class="demo-btn" onclick="watchDemo()">
+                    ▶ &nbsp; Watch Demo
+                </button>
+
+            </div>
+
+            <div class="trust-points">
+
+                <div>
+                    <span>✓</span>
+                    Free to start
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    No credit card required
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Access anywhere
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO IMAGE -->
+
+        <div class="hero-visual">
+
+            <img
+                src="Hero.png"
+                alt="Student using StudyAI"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features-section" id="features">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                FEATURES
+            </div>
+
+            <h2>
+                Everything You Need to Ace Your Studies
+            </h2>
+
+            <p>
+                Powerful AI tools designed to make learning
+                easier, faster and more effective.
+            </p>
+
+        </div>
+
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-icon blue">
+                    📄
+                </div>
+
+                <h3>AI Notes Analyzer</h3>
+
+                <p>
+                    Get concise summaries, key points and
+                    important questions from your PDFs.
+                </p>
+
+                <a href="#">Explore →</a>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon purple">
+                    📝
+                </div>
+
+                <h3>AI Quiz Generator</h3>
+
+                <p>
+                    Practice with AI-generated MCQs and
+                    track your performance.
+                </p>
+
+                <a href="#">Generate Quiz →</a>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon green">
+                    🗂️
+                </div>
+
+                <h3>Flashcards</h3>
+
+                <p>
+                    Learn faster with AI-generated flashcards
+                    and spaced repetition.
+                </p>
+
+                <a href="#">Create Cards →</a>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon orange">
+                    📅
+                </div>
+
+                <h3>Study Planner</h3>
+
+                <p>
+                    Get personalized study schedules and
+                    stay on track with your goals.
+                </p>
+
+                <a href="#">Plan Study →</a>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon pink">
+                    📊
+                </div>
+
+                <h3>Progress Analytics</h3>
+
+                <p>
+                    Track your growth with detailed insights
+                    and visual analytics.
+                </p>
+
+                <a href="#">View Progress →</a>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon yellow">
+                    🔔
+                </div>
+
+                <h3>Smart Reminders</h3>
+
+                <p>
+                    Never miss a study goal with timely
+                    notifications and reminders.
+                </p>
+
+                <a href="#">Set Reminder →</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="how-section" id="how-it-works">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                HOW IT WORKS
+            </div>
+
+            <h2>
+                Just 4 Simple Steps
+            </h2>
+
+        </div>
+
+
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <div>
+                    <h3>Upload Your Material</h3>
+
+                    <p>
+                        Add notes, PDFs or type your topic.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="arrow">→</div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <div>
+                    <h3>Let AI Do the Magic</h3>
+
+                    <p>
+                        Get summaries, quizzes and flashcards.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="arrow">→</div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <div>
+                    <h3>Study & Practice</h3>
+
+                    <p>
+                        Learn at your own pace.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="arrow">→</div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <div>
+                    <h3>Track Your Progress</h3>
+
+                    <p>
+                        See your growth and stay motivated.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta-section">
+
+    <div class="container cta-container">
+
+        <div>
+
+            <h2>
+                Ready to Study Smarter?
+            </h2>
+
+            <p>
+                Start your personalized AI-powered learning
+                journey today.
+            </p>
+
+        </div>
+
+        <button
+            class="primary-btn large"
+            onclick="getStarted()"
+        >
+            Get Started Free →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container footer-container">
+
+        <div class="footer-brand">
+
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <span>Study<span>AI</span></span>
+            </div>
+
+            <p>
+                Your personal AI study companion.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <div>
+                <h4>Product</h4>
+                <a href="#features">Features</a>
+                <a href="#">AI Tools</a>
+                <a href="#">Pricing</a>
+            </div>
+
+            <div>
+                <h4>Company</h4>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 StudyAI. All rights reserved.
+    </div>
+
+</footer>
+
+
+<!-- LOGIN MODAL -->
+
+<div class="modal" id="loginModal">
+
+    <div class="modal-box">
+
+        <button class="close-btn" onclick="closeLogin()">
+            ×
+        </button>
+
+        <div class="modal-logo">
+            🎓
+        </div>
+
+        <h2>Welcome Back 👋</h2>
+
+        <p>Login to continue studying smarter.</p>
+
+        <form onsubmit="login(event)">
+
+            <input
+                type="email"
+                placeholder="Email address"
+                required
+            >
+
+            <input
+                type="password"
+                placeholder="Password"
+                required
+            >
+
+            <button class="primary-btn full">
+                Login
+            </button>
+
+        </form>
+
+        <p class="signup-text">
+            Don't have an account?
+            <a href="#">Create one</a>
+        </p>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
