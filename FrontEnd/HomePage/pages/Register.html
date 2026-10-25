@@ -1144,8 +1144,7 @@
 
         document
             .getElementById("registerForm")
-            .addEventListener("submit", function (event) {
-
+                .addEventListener("submit", async function (event) {
                 event.preventDefault();
 
 
@@ -1160,24 +1159,57 @@
                 }
 
 
-                /*
-                    Backend integration will be added here.
+                                const selectedTargets = Array.from(
+                    document.querySelectorAll(
+                        'input[name="target"]:checked'
+                    )
+                ).map(input => input.value);
 
-                    Registration data can later be sent using:
+                const payload = {
+                    name: document.getElementById("fullName").value.trim(),
+                    email: document.getElementById("email").value.trim(),
+                    password: document.getElementById("password").value,
+                    dob: document.getElementById("dob").value,
+                    gender: document.getElementById("gender").value,
+                    education: document.getElementById("education").value,
+                    institution: document.getElementById("institution").value,
+                    stream: document.getElementById("stream").value,
+                    subjects: document.getElementById("subjects").value,
+                    targets: selectedTargets,
+                    governmentExam: document.getElementById("govExam").value,
+                    studyHours: document.getElementById("studyHours").value,
+                    studyTime: document.getElementById("studyTime").value,
+                    learningStyle: document.getElementById("learningStyle").value
+                };
 
-                    fetch("/api/register", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(...)
-                    });
-                */
+                try {
+                    const response = await fetch(
+                        "http://localhost:5000/api/auth/register",
+                        {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(payload)
+                        }
+                    );
 
+                    const result = await response.json();
 
-                alert(
-                    "Account created successfully!"
-                );
+                    if (!response.ok) {
+                        alert(result.message || "Registration failed.");
+                        return;
+                    }
+
+                    alert("Account created successfully!");
+                    document.getElementById("registerForm").reset();
+
+                } catch (error) {
+                    console.error("Registration error:", error);
+                    alert(
+                        "Backend se connection nahi ho pa raha. Please check that the server is running."
+                    );
+                }
 
                 // window.location.href = "profile.html";
 
